@@ -1,0 +1,32 @@
+<?php
+function simple_react_crud_schema() {
+ $schema['product_categories'] = [
+    'description' => 'Product category would be stored.',
+    'fields' => [
+      'id'      => ['type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE],
+      'name'    => ['type' => 'varchar', 'length' => 100, 'not null' => TRUE],
+      'description' => ['type' => 'text', 'size' => 'medium'],
+      'created'   => ['type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => '0'],
+      'modified'  => ['type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => '0'],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  $schema['products'] = [
+    'description' => 'Product information would be stored.',
+    'fields' => [
+      'id' => ['type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE],
+      'product_category_id' => ['type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE],      
+      'name' => ['type' => 'varchar', 'length' => 100, 'not null' => TRUE],
+      'sku' => ['type' => 'varchar', 'length' => 100, 'not null' => TRUE],
+      'description'=> ['type' => 'text', 'size' => 'medium'],
+      'price' => ['type' => 'float', 'size' => 'normal','not null' => TRUE,'default' => '0'],
+      'status' => ['type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE,'default' => '0'],
+      'created' => ['type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE,'default' => '0'],
+      'modified' => ['type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => '0'],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}

@@ -1,0 +1,4 @@
+services:
+  simple_react_crud.api_controller:
+    class: Drupal\simple_react_crud\Controller\ApiController
+    arguments: ['@database']

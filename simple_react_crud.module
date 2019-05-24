@@ -1,0 +1,11 @@
+<?php
+/**
+* Implements hook_theme() to add the template definition.
+**/
+function simple_react_crud_theme($existing, $type, $theme, $path) {
+  $theme = array();
+  $theme['product_template'] = array(
+     'variables' => array('test_var' => NULL),
+  );
+  return $theme;
+}

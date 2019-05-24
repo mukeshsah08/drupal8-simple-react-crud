@@ -1,0 +1,55 @@
+simple_react_crud.product_list:
+  path: '/react/product-list'
+  defaults:
+    _controller: '\Drupal\simple_react_crud\Controller\ProductController::showProduct'
+    _title: 'Product'
+  requirements:
+    _permission: 'access content'
+
+simple_react_crud.api_product_list:
+  path: '/api/product-list'
+  defaults:
+    _controller: '\Drupal\simple_react_crud\Controller\ApiController::getProductList'
+    _title: 'Product List'
+  requirements:
+    _permission: 'access content'
+
+simple_react_crud.api_product_category_list:
+  path: '/api/product-category-list'
+  defaults:
+    _controller: '\Drupal\simple_react_crud\Controller\ApiController::getProductCategoryList'
+    _title: 'Product Category List'
+  requirements:
+    _permission: 'access content'
+
+simple_react_crud.api_create_product:
+  path: '/api/create-product'
+  defaults:
+    _controller: '\Drupal\simple_react_crud\Controller\ApiController::createProduct'
+    _title: 'Create Product'
+  requirements:
+    _permission: 'access content'
+
+simple_react_crud.api_product_info:
+  path: '/api/product-info'
+  defaults:
+    _controller: '\Drupal\simple_react_crud\Controller\ApiController::getProductInfo'
+    _title: 'Product Information'
+  requirements:
+    _permission: 'access content' 
+
+simple_react_crud.api_update_product:
+  path: '/api/update-product'
+  defaults:
+    _controller: '\Drupal\simple_react_crud\Controller\ApiController::updateProduct'
+    _title: 'Product Information'
+  requirements:
+    _permission: 'access content'   
+
+simple_react_crud.api_dlete_product:
+  path: '/api/delete-product'
+  defaults:
+    _controller: '\Drupal\simple_react_crud\Controller\ApiController::deleteProduct'
+    _title: 'Product Delete'
+  requirements:
+    _permission: 'access content'           
