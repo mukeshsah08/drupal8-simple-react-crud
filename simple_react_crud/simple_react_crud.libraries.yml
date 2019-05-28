@@ -4,20 +4,6 @@ react-styling:
       css/custom.css: {} 
 
   js:
-    #https://unpkg.com/react@16/umd/react.production.min.js: { type: external, minified: true, attributes:{crossorigin: anonymous} }
-    #https://unpkg.com/react-dom@16/umd/react-dom.production.min.js: { type: external, minified: true, attributes:{crossorigin: anonymous}}
-    #https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js: { type: external, minified: true  }
-   
-    #js/product/update_product.component.js: {attributes: { type: 'text/babel' } } 
-    #js/product/create_product.component.js: {attributes: { type: 'text/babel' } }
-    #js/product/delete_product.component.js: {attributes: { type: 'text/babel' } }
-    #js/product/read_one_product.component.js: {attributes: { type: 'text/babel' } }
-    #js/product/product_table_row.component.js: {attributes: { type: 'text/babel' } }
-    #js/product/product_table.component.js: {attributes: { type: 'text/babel' } }
-    #js/product/top_actions.component.js: {attributes: { type: 'text/babel' } }
-    #js/product/read_products.component.js: {attributes: { type: 'text/babel' } }
-    #js/main.component.js: {attributes: { type: 'text/babel' } }
-    react_code/dist/index_bundle.js: {}
+    react_app/dist/index_bundle.js: {}
 
 
-    #https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js: { type: external, minified: true }
