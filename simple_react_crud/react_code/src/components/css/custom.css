@@ -1,0 +1,112 @@
+.text-align-center {
+    text-align: center;
+}
+
+.margin-zero {
+    margin: 0;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.m-b-1em {
+    margin-bottom: 1em;
+}
+
+.m-r-1em {
+    margin-right: 1em;
+}
+.form-error {
+	color: red;
+}
+.page-header {
+	color:#007bff;
+}
+
+/* Loader css start */
+.ajax-loader {
+
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loader css end */
+
+.modal {
+  font-size: 12px;
+  display: block;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 0px solid #cfcece;
+}
+
+.active-btn {
+    /* color: red; */
+    background-color: #e3e9f2;
+    margin-bottom: 15px;
+    font-weight: 700;
+    vertical-align:top;
+}   
+
+.btn-wrapper div {
+  display:inline-block;
+  margin: 0 10px;
+  
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    vertical-align: top;
+}
+
+
+
+
