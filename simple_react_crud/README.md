@@ -4,7 +4,7 @@ Module installation
 --------------------------
 1. Install and enable drupal module
 
-2. Run /react/product-list 
+
 
 
 
@@ -14,15 +14,34 @@ Got to react_code
 
 Install all dependency library from nmp
 
-1) nmp install
+2. nmp install
 
-To start the app server it will display live changes
+Set Api path for React
 
-2) npm start 
+3. Go to react_code\src and change the apiUrl inside config.js as per your current url of Drupal
+
+To start the app server it will display live changes (optional)
+
+4. npm start 
 
 To create a new build inside dist directory
 
-3) npm run build
+5. npm run build
+
+
+Run the Drupal Page having React
+---------------------------------
+
+6. http://yourdomain.com/react/product-list
+
+
+
+
+
+
+
+
+
 
 
 
