@@ -35,16 +35,35 @@ class ApiController extends ControllerBase {
   header("Access-Control-Allow-Origin: *");
   header("Content-Type: application/json; charset=UTF-8");	
 
+
+
+    // set current page
+    $page = isset($_GET['page']) ? $_GET['page'] : 1; 
+    // set limit of records for current page
+    $limit = isset($_GET['limit']) ? $_GET['limit'] : 10; 
+    $start = (($page*$limit) - $limit);  
+   //exit;
+    // to get total records
+    $query = $this->injected_database->select('products', 'p');
+    $query->addExpression('COUNT(id)', 'total');
+    $result = $query->execute()->fetchAssoc();
+    $total = $result['total'];
+
+    // to get records of current page
     $select = $this->injected_database->select('products', 'p');
     $select->fields('p');
     $select->addField('pc', 'name', 'category_name');
     $select->join('product_categories', 'pc', 'p.product_category_id = pc.id');
     $select->condition('p.status', 1, "=");
+    $select->range($start, $limit);
+    $select->orderBy('id', 'DESC');
+    
     $result = $select->execute()->fetchAll(\PDO::FETCH_ASSOC);
     $result_count = count($result);
 
     $product_arr = [];
     $products_arr["records"] = [];
+    $products_arr["total"] = $total;
     if($result_count > 0 ) {
     	//$products_arr["records"] = $result_count;
      	foreach ($result as $row) {
@@ -62,17 +81,19 @@ class ApiController extends ControllerBase {
 
           array_push($products_arr["records"], $product_item);
       }
-      
-    	echo json_encode($products_arr);
-    	 exit;
-    } else {
-    	
-    }
+    	 
+    } 
+    echo json_encode($products_arr);
+    exit;
+
   }
 
   public function getProductCategoryList() {
   header("Access-Control-Allow-Origin: *");
-  header("Content-Type: application/json; charset=UTF-8");  
+  header("Content-Type: application/json; charset=UTF-8");
+
+    // set id of product
+    $pid = isset($_GET['id']) ? $_GET['id'] : 0;  
 
     $select = $this->injected_database->select('product_categories', 'pc');
     $select->fields('pc');
@@ -121,7 +142,7 @@ class ApiController extends ControllerBase {
       
       if(!empty($result)) {
         echo json_encode(
-        array("message"=>"Product was created.")
+        array("message"=>"Product has been creaated successfully!")
       );
       } else { // if unable to create product, notify user
         echo json_encode(
@@ -188,7 +209,7 @@ class ApiController extends ControllerBase {
       
       if(!empty($result)) {
         echo json_encode(
-        array("message"=>"Product was updated.")
+        array("message"=>"Product has been updated successfully!")
         );
       } else { // if unable to update product, notify user
         echo json_encode(
@@ -215,7 +236,7 @@ class ApiController extends ControllerBase {
       
       if(!empty($result)) {
         echo json_encode(
-        array("message"=>"Product was deleted.")
+        array("message"=>"Product has been deleted successfully!")
         );
       } else { // if unable to update product, notify user
         echo json_encode(

@@ -30,3 +30,30 @@ function simple_react_crud_schema() {
 
   return $schema;
 }
+
+function simple_react_crud_install() {
+
+    // inserting default categories
+    $values = [
+    [
+      'name' => 'Smartphone',
+      'description' => 'All Brands of smartphone',
+      'created' => time(),
+      'modified' => 0,
+    ],
+    [
+      'name' => 'LED TV',
+      'description' => 'All Brands of LED TV',
+      'created' => time(),
+      'modified' => 0,
+    ],
+
+  ];
+  $query = db_insert('product_categories')->fields(['name', 'description', 'created','modified']);
+  foreach ($values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
+
+
+}  
