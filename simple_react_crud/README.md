@@ -12,9 +12,9 @@ Run React App
 ---------------
 Got to react_code
 
-Install all dependency library from nmp
+Install all dependency libraries from npm
 
-2. nmp install
+2. npm install
 
 Set Api path for React
 
