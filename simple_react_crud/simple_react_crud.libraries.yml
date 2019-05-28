@@ -4,6 +4,6 @@ react-styling:
       css/custom.css: {} 
 
   js:
-    react_app/dist/index_bundle.js: {}
+    react_code/dist/index_bundle.js: {}
 
 
