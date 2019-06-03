@@ -10,7 +10,7 @@ Module installation
 
 Run React App
 ---------------
-Got to react_code
+Go to react_code
 
 Install all dependency libraries from npm
 
