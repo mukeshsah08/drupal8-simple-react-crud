@@ -28,11 +28,12 @@ To create a new build inside dist directory
 
 5. npm run build
 
+6. Clear the cache from admin panel
 
 Run the Drupal Page having React
 ---------------------------------
 
-6. http://yourdomain.com/react/product-list
+7. http://yourdomain.com/react/product-list
 
 
 
